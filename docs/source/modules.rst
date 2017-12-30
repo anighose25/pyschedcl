@@ -1,0 +1,8 @@
+pyschedcl
+=========
+
+.. toctree::
+   :maxdepth: 4
+
+   pyschedcl/*
+

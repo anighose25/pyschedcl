@@ -1,0 +1,42 @@
+{
+
+    "globalWorkSize": "[dataset]", 
+    "inputBuffers": [
+        {
+            "break": 0, 
+            "pos": 0, 
+            "size": "dataset**2", 
+            "type": "float"
+        }, 
+        {
+            "break": 1, 
+            "pos": 1, 
+            "size": "dataset", 
+            "type": "float"
+        }
+    ], 
+    "name": "bicgKernel2", 
+    "outputBuffers": [
+        {
+            "break": 0, 
+            "pos": 2, 
+            "size": "dataset", 
+            "type": "float"
+        }
+    ], 
+    "partition": 8, 
+    "src": "bicg.cl", 
+    "varArguments": [
+        {
+            "pos": 3, 
+            "type": "int", 
+            "value": "partition_round(dataset, size_percent)"
+        }, 
+        {
+            "pos": 4, 
+            "type": "int", 
+            "value": "dataset"
+        }
+    ], 
+    "workDimension": 1
+}

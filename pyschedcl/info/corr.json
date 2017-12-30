@@ -1,0 +1,35 @@
+{
+    "globalWorkSize": "[dataset]", 
+    "inputBuffers": [
+        {
+            "break": 0, 
+            "pos": 0, 
+            "size": "dataset**2", 
+            "type": "float"
+        }
+    ], 
+    "name": "corr_kernel", 
+    "outputBuffers": [
+        {
+            "break": 0, 
+            "pos": 1, 
+            "size": "dataset**2", 
+            "type": "float"
+        }
+    ], 
+    "partition": 8, 
+    "src": "correlation.cl", 
+    "varArguments": [
+        {
+            "pos": 3, 
+            "type": "int", 
+            "value": "partition_round(dataset, size_percent)"
+        }, 
+        {
+            "pos": 2, 
+            "type": "int", 
+            "value": "dataset"
+        }
+    ], 
+    "workDimension": 1
+}

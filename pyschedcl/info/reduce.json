@@ -1,0 +1,47 @@
+{
+
+    "globalWorkSize": "[dataset, dataset]", 
+    "inputBuffers": [
+        {
+            "break": 1, 
+            "pos": 0, 
+            "size": "dataset", 
+            "type": "float"
+        }, 
+        {
+            "break": 1, 
+            "pos": 1, 
+            "size": "dataset", 
+            "type": "float"
+        }
+    ], 
+    "name": "reduce_kernel", 
+    "outputBuffers": [
+        {
+            "break": 1, 
+            "pos": 2, 
+            "size": "dataset**2", 
+            "type": "float"
+        }
+    ], 
+    "partition": 10, 
+    "src": "correlation.cl", 
+    "varArguments": [
+        {
+            "pos": 3, 
+            "type": "float", 
+            "value": "3214212.01"
+        }, 
+        {
+            "pos": 4, 
+            "type": "int", 
+            "value": "dataset"
+        }, 
+        {
+            "pos": 5, 
+            "type": "int", 
+            "value": "partition_round(dataset, size_percent)"
+        }
+    ], 
+    "workDimension": 2
+}

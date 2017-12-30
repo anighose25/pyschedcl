@@ -1,0 +1,35 @@
+{
+    "globalWorkSize": "[dataset,dataset]",
+    "inputBuffers": [
+        {
+            "break": 1, 
+            "pos": 0, 
+            "size": "dataset**2", 
+            "type": "float"
+        }
+    ], 
+    "name": "Convolution2D_kernel", 
+    "outputBuffers": [
+        {
+            "break": 1, 
+            "pos": 1, 
+            "size": "dataset**2", 
+            "type": "float"
+        }
+    ], 
+    "partition": 8, 
+    "src": "convol2.cl", 
+    "varArguments": [
+        {
+            "pos": 2, 
+            "type": "int", 
+            "value": "partition_round(dataset, size_percent)"
+        }, 
+        {
+            "pos": 3, 
+            "type": "int", 
+            "value": "dataset"
+        }
+    ], 
+    "workDimension": 2
+}

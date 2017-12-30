@@ -1,0 +1,761 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>pyschedcl package &mdash; PySchedCL 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="PySchedCL 1.0 documentation" href="index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PySchedCL 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="pyschedcl-package">
+<h1>pyschedcl package<a class="headerlink" href="#pyschedcl-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-pyschedcl.constant_pyschedcl">
+<span id="pyschedcl-constant-pyschedcl-module"></span><h2>pyschedcl.constant_pyschedcl module<a class="headerlink" href="#module-pyschedcl.constant_pyschedcl" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-pyschedcl.pyschedcl">
+<span id="pyschedcl-pyschedcl-module"></span><h2>pyschedcl.pyschedcl module<a class="headerlink" href="#module-pyschedcl.pyschedcl" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="pyschedcl.pyschedcl.HostEvents">
+<em class="property">class </em><code class="descclassname">pyschedcl.pyschedcl.</code><code class="descname">HostEvents</code><span class="sig-paren">(</span><em>kernel_name=''</em>, <em>kernel_id=''</em>, <em>dispatch_id=''</em>, <em>dispatch_start=None</em>, <em>dispatch_end=None</em>, <em>create_buf_start=None</em>, <em>create_buf_end=None</em>, <em>write_start=None</em>, <em>write_end=None</em>, <em>ndrange_start=None</em>, <em>ndrange_end=None</em>, <em>read_start=None</em>, <em>read_end=None</em>, <em>kernel_events=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyschedcl/pyschedcl.html#HostEvents"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyschedcl.pyschedcl.HostEvents" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="pyschedcl.pyschedcl.KEvents">
+<em class="property">class </em><code class="descclassname">pyschedcl.pyschedcl.</code><code class="descname">KEvents</code><span class="sig-paren">(</span><em>kernel_name=''</em>, <em>kernel_id=''</em>, <em>dispatch_id=''</em>, <em>dispatch_start=None</em>, <em>dispatch_end=None</em>, <em>write_submit=None</em>, <em>write_start=None</em>, <em>write_end=None</em>, <em>ndrange_start=None</em>, <em>ndrange_end=None</em>, <em>read_start=None</em>, <em>read_end=None</em>, <em>load_start=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyschedcl/pyschedcl.html#KEvents"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyschedcl.pyschedcl.KEvents" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<dl class="method">
+<dt id="pyschedcl.pyschedcl.KEvents.normalize">
+<code class="descname">normalize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyschedcl/pyschedcl.html#KEvents.normalize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyschedcl.pyschedcl.KEvents.normalize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pyschedcl.pyschedcl.Kernel">
+<em class="property">class </em><code class="descclassname">pyschedcl.pyschedcl.</code><code class="descname">Kernel</code><span class="sig-paren">(</span><em>src</em>, <em>dataset=1024</em>, <em>partition=None</em>, <em>identifier=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyschedcl/pyschedcl.html#Kernel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyschedcl.pyschedcl.Kernel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p>Class to handle all operations perfomed on kernel.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Variables:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> &#8211; initial value:</li>
+<li><strong>src</strong> &#8211; initial value:</li>
+<li><strong>partition</strong> &#8211; initial value:</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="pyschedcl.pyschedcl.Kernel.build_kernel">
+<code class="descname">build_kernel</code><span class="sig-paren">(</span><em>gpus</em>, <em>cpus</em>, <em>ctxs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyschedcl/pyschedcl.html#Kernel.build_kernel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyschedcl.pyschedcl.Kernel.build_kernel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Builds Kernels from kernel_src/ for each device and stores binaries in self.kernel_objects dict.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>gpus</strong> (<em>Integer</em>) &#8211; Number of GPU devices</li>
+<li><strong>cpus</strong> (<em>Integer</em>) &#8211; Number of CPU devices</li>
+<li><strong>ctxs</strong> (<a class="reference external" href="https://docs.python.org/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) &#8211; Dictionary of contexts keyed by device types</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Dictionary of key: value pairs where key is device type and value is the device specific binary compiled for the kernel</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/library/stdtypes.html#dict" title="(in Python v2.7)">dict</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyschedcl.pyschedcl.Kernel.create_buffers">
+<code class="descname">create_buffers</code><span class="sig-paren">(</span><em>ctx</em>, <em>obj</em>, <em>size_percent=100</em>, <em>offset_percent=0</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyschedcl/pyschedcl.html#Kernel.create_buffers"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyschedcl.pyschedcl.Kernel.create_buffers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates buffers for a Context while respecting partition information provided for every buffer associated
+with the kernel.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>ctx</strong> (<em>pyopencl.Context</em>) &#8211; PyOpenCL Context for either a CPU or a GPU device</li>
+<li><strong>obj</strong> (<em>String</em>) &#8211; Device Type</li>
+<li><strong>size_percent</strong> (<em>Float</em>) &#8211; Size of valid buffer space for device</li>
+<li><strong>offset_percent</strong> &#8211; Offset parameter representing</li>
+<li><strong>kwargs</strong> &#8211; </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyschedcl.pyschedcl.Kernel.dispatch">
+<code class="descname">dispatch</code><span class="sig-paren">(</span><em>gpu</em>, <em>cpu</em>, <em>ctxs</em>, <em>cmd_qs</em>, <em>dep=None</em>, <em>partition=None</em>, <em>callback=&lt;function blank_fn&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyschedcl/pyschedcl.html#Kernel.dispatch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyschedcl.pyschedcl.Kernel.dispatch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dispatch Kernel with given partition class value (0,1,2,...,10) 0 is for complete CPU and 10 is for complete GPU.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>gpu</strong> (<em>Integer</em>) &#8211; Denotes the index of gpu device in cmd_qs[&#8216;gpu&#8217;] list or is -1 if we don&#8217;t want to use device of
+this type.</li>
+<li><strong>cpu</strong> (<em>Integer</em>) &#8211; Denotes the index of cpu device in cmd_qs[&#8216;cpu&#8217;] list or is -1 if we don&#8217;t want to use device of
+this type.</li>
+<li><strong>ctxs</strong> (<a class="reference external" href="https://docs.python.org/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) &#8211; Dictionary of Contexts for CPU and GPU devices.</li>
+<li><strong>cmd_qs</strong> (<a class="reference external" href="https://docs.python.org/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) &#8211; Dictionary of list of Command Queues</li>
+<li><strong>dep</strong> &#8211; </li>
+<li><strong>partition</strong> (<em>Integer</em>) &#8211; Integer from 0 to 10 or None denoting partition class value.</li>
+<li><strong>callback</strong> &#8211; A function that will run on the host side once the kernel completes execution on the device.
+Handle unexpected arguments.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Tuple with first element being the starting time (host side) of dispatch and second element being list of kernel events</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>for both CPU and GPU devices
+:rtype Tuple</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyschedcl.pyschedcl.Kernel.dispatch_multiple">
+<code class="descname">dispatch_multiple</code><span class="sig-paren">(</span><em>gpus</em>, <em>cpus</em>, <em>ctxs</em>, <em>cmd_qs</em>, <em>dep=None</em>, <em>partition=None</em>, <em>callback=&lt;function blank_fn&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyschedcl/pyschedcl.html#Kernel.dispatch_multiple"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyschedcl.pyschedcl.Kernel.dispatch_multiple" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dispatch Kernel across multiple devices  with given partition class value (0,1,2,...,10)
+0 is for complete CPU and 10 is for complete GPU.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>gpus</strong> (<em>list</em>) &#8211; A list of gpu device ids</li>
+<li><strong>cpus</strong> (<em>list</em>) &#8211; A list of cpu device ids</li>
+<li><strong>ctxs</strong> (<a class="reference external" href="https://docs.python.org/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) &#8211; Dictionary of Contexts for CPU and GPU devices.</li>
+<li><strong>cmd_qs</strong> (<a class="reference external" href="https://docs.python.org/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) &#8211; Dictionary of list of Command Queues</li>
+<li><strong>dep</strong> &#8211; </li>
+<li><strong>partition</strong> (<em>Integer</em>) &#8211; Integer from 0 to 10 or None denoting partition class value.</li>
+<li><strong>callback</strong> &#8211; A function that will run on the host side once the kernel completes execution on the device.
+Handle unexpected arguments.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Tuple with first element being the starting time (host side) of dispatch and second element being list of kernel events</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>for both CPU and GPU devices
+:rtype Tuple</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyschedcl.pyschedcl.Kernel.enqueue_nd_range_kernel">
+<code class="descname">enqueue_nd_range_kernel</code><span class="sig-paren">(</span><em>queue</em>, <em>q_id</em>, <em>obj</em>, <em>size_percent=100</em>, <em>offset_percent=0</em>, <em>deps=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyschedcl/pyschedcl.html#Kernel.enqueue_nd_range_kernel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyschedcl.pyschedcl.Kernel.enqueue_nd_range_kernel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enqueue ND Range Kernel</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>queue</strong> &#8211; </li>
+<li><strong>q_id</strong> &#8211; </li>
+<li><strong>obj</strong> &#8211; </li>
+<li><strong>size_percent</strong> &#8211; </li>
+<li><strong>offset_percent</strong> &#8211; </li>
+<li><strong>kwargs</strong> &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyschedcl.pyschedcl.Kernel.enqueue_read_buffers">
+<code class="descname">enqueue_read_buffers</code><span class="sig-paren">(</span><em>queue</em>, <em>q_id</em>, <em>obj</em>, <em>size_percent=100</em>, <em>offset_percent=0</em>, <em>deps=None</em>, <em>callback=&lt;function blank_fn&gt;</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyschedcl/pyschedcl.html#Kernel.enqueue_read_buffers"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyschedcl.pyschedcl.Kernel.enqueue_read_buffers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enqueue Read Buffers.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>queue</strong> &#8211; </li>
+<li><strong>q_id</strong> &#8211; </li>
+<li><strong>obj</strong> &#8211; </li>
+<li><strong>size_percent</strong> &#8211; </li>
+<li><strong>offset_percent</strong> &#8211; </li>
+<li><strong>callback</strong> &#8211; </li>
+<li><strong>kwargs</strong> &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyschedcl.pyschedcl.Kernel.enqueue_write_buffers">
+<code class="descname">enqueue_write_buffers</code><span class="sig-paren">(</span><em>queue</em>, <em>q_id</em>, <em>obj</em>, <em>size_percent=100</em>, <em>offset_percent=0</em>, <em>deps=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyschedcl/pyschedcl.html#Kernel.enqueue_write_buffers"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyschedcl.pyschedcl.Kernel.enqueue_write_buffers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enqueue lists of Read-Write Buffers.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>queue</strong> &#8211; Command Queue for a CPU or a GPU device</td>
+</tr>
+</tbody>
+</table>
+<p>:type : pyopencl.CommandQueue
+:param q_id: ID of queue
+:type Integer
+:param obj: Device Type (cpu or gpu)
+:type obj: String
+:param size_percent:
+:type size_percent:
+:param offset_percent:
+:type offset_percent:
+:param deps: Intial PyOpenCL Event on which subsequent write operations will be dependent stored in a list
+:type deps: list
+:param kwargs:
+:type kwargs:
+:return:</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyschedcl.pyschedcl.Kernel.eval_turnaround_time">
+<code class="descname">eval_turnaround_time</code><span class="sig-paren">(</span><em>start_time</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyschedcl/pyschedcl.html#Kernel.eval_turnaround_time"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyschedcl.pyschedcl.Kernel.eval_turnaround_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluates and returns turn around time. Time taken for the kernel to finish from start_time till end of execution</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>start_time</strong> (<a class="reference external" href="https://docs.python.org/library/datetime.html#datetime.datetime" title="(in Python v2.7)"><em>datetime.datetime</em></a>) &#8211; </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Returns total time in seconds taken for the completion of kernel since start_time</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyschedcl.pyschedcl.Kernel.eval_vargs">
+<code class="descname">eval_vargs</code><span class="sig-paren">(</span><em>partition=None</em>, <em>size_percent=0</em>, <em>offset_percent=0</em>, <em>reverse=False</em>, <em>exact=-1</em>, <em>total=100</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyschedcl/pyschedcl.html#Kernel.eval_vargs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyschedcl.pyschedcl.Kernel.eval_vargs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method to evaluate kernel arguments. Evaluates variable kernel arguments from the specification
+file if they are an expression against size percent.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>partition</strong> (<em>Integer</em>) &#8211; Partition Class Value</li>
+<li><strong>size_percent</strong> &#8211; </li>
+<li><strong>offset_percent</strong> &#8211; </li>
+<li><strong>reverse</strong> &#8211; </li>
+<li><strong>exact</strong> &#8211; </li>
+<li><strong>total</strong> &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyschedcl.pyschedcl.Kernel.eval_wait_time">
+<code class="descname">eval_wait_time</code><span class="sig-paren">(</span><em>start_time</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyschedcl/pyschedcl.html#Kernel.eval_wait_time"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyschedcl.pyschedcl.Kernel.eval_wait_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate Wait Time.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>start_time</strong> (<a class="reference external" href="https://docs.python.org/library/datetime.html#datetime.datetime" title="(in Python v2.7)"><em>datetime.datetime</em></a>) &#8211; Actual starting time of task</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Waiting time for task to start</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">seconds</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyschedcl.pyschedcl.Kernel.get_buffer">
+<code class="descname">get_buffer</code><span class="sig-paren">(</span><em>pos</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyschedcl/pyschedcl.html#Kernel.get_buffer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyschedcl.pyschedcl.Kernel.get_buffer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns cl.Buffer objects given its parameter position in the kernel.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>pos</strong> &#8211; Position of buffer argument in list of kernel arguments</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Type:</th><td class="field-body">Integer</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">PyOpenCL Buffer Object for selected buffer</td>
+</tr>
+</tbody>
+</table>
+<p>:rtype pyopencl.Buffer</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyschedcl.pyschedcl.Kernel.get_buffer_info">
+<code class="descname">get_buffer_info</code><span class="sig-paren">(</span><em>pos</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyschedcl/pyschedcl.html#Kernel.get_buffer_info"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyschedcl.pyschedcl.Kernel.get_buffer_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns buffer information stored in Kernel specification file for buffer at given position in Kernel Arguments.
+Used to make reusable buffers.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>pos</strong> (<em>Integer</em>) &#8211; Position of buffer argument in list of kernel arguments</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Returns a dictionary of key:value pairs representing information of selected buffer in self.buffer_info</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/library/stdtypes.html#dict" title="(in Python v2.7)">dict</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyschedcl.pyschedcl.Kernel.get_buffer_info_location">
+<code class="descname">get_buffer_info_location</code><span class="sig-paren">(</span><em>pos</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyschedcl/pyschedcl.html#Kernel.get_buffer_info_location"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyschedcl.pyschedcl.Kernel.get_buffer_info_location" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns buffer_info location at given position. Used to make reusable buffers.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>pos</strong> (<em>Integer</em>) &#8211; Position of buffer argument in list of kernel arguments</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Tuple(key, i) where key represents type of buffer access and i represents the id for that buffer in self.buffer_info[key]</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Tuple</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyschedcl.pyschedcl.Kernel.get_data">
+<code class="descname">get_data</code><span class="sig-paren">(</span><em>pos</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyschedcl/pyschedcl.html#Kernel.get_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyschedcl.pyschedcl.Kernel.get_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the data of a particular kernel argument given its parameter position in the kernel.  Used to load dependent data.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>pos</strong> (<em>Integer</em>) &#8211; Position of buffer argument in list of kernel arguments</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Data stored in buffer specified by parameter position in kernel</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Numpy array</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyschedcl.pyschedcl.Kernel.get_device_requirement">
+<code class="descname">get_device_requirement</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyschedcl/pyschedcl.html#Kernel.get_device_requirement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyschedcl.pyschedcl.Kernel.get_device_requirement" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyschedcl.pyschedcl.Kernel.get_num_global_work_items">
+<code class="descname">get_num_global_work_items</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyschedcl/pyschedcl.html#Kernel.get_num_global_work_items"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyschedcl.pyschedcl.Kernel.get_num_global_work_items" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the total number of global work items based on global work size.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Total number of global work items considering all dimensions</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">Integer</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyschedcl.pyschedcl.Kernel.get_partition_multiples">
+<code class="descname">get_partition_multiples</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyschedcl/pyschedcl.html#Kernel.get_partition_multiples"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyschedcl.pyschedcl.Kernel.get_partition_multiples" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines partition multiples based on work dimension. This method returns a list of numbers
+based on global work size and local work size according to which the partition sizes will be determined.</p>
+<p>:return List of integers representing partition multiples for each dimension
+:rtype: list</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyschedcl.pyschedcl.Kernel.get_slice_values">
+<code class="descname">get_slice_values</code><span class="sig-paren">(</span><em>buffer_info</em>, <em>size_percent</em>, <em>offset_percent</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyschedcl/pyschedcl.html#Kernel.get_slice_values"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyschedcl.pyschedcl.Kernel.get_slice_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns Element offset, size based on size_percent, offset_percent.-</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>buffer_info</strong> (<a class="reference external" href="https://docs.python.org/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) &#8211; Dictionary of key:value pairs representing information of one buffer</li>
+<li><strong>size_percent</strong> (<em>Float</em>) &#8211; Size of buffer to be processed (in percentage)</li>
+<li><strong>offset_percent</strong> (<em>Float</em>) &#8211; Offset for given buffer (in percentage)</li>
+<li><strong>kwargs</strong> &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyschedcl.pyschedcl.Kernel.load_data">
+<code class="descname">load_data</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyschedcl/pyschedcl.html#Kernel.load_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyschedcl.pyschedcl.Kernel.load_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Populates all host input arrays with given data.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>data</strong> (<a class="reference external" href="https://docs.python.org/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) &#8211; Dictionary structure comprising user defined data for host input arrays</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyschedcl.pyschedcl.Kernel.random_data">
+<code class="descname">random_data</code><span class="sig-paren">(</span><em>low=0</em>, <em>hi=4096</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyschedcl/pyschedcl.html#Kernel.random_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyschedcl.pyschedcl.Kernel.random_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates random data numpy arrays according to buffer type so that it can be enqueued to buffer.
+Can be used for testing. Will not generate random data for those buffers that are already enqueued.
+Creates empty arrays for read-only buffers. Populates values for self.data dictionary.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>low</strong> (<em>Integer</em>) &#8211; Lower value of data array size</li>
+<li><strong>hi</strong> (<em>Integer</em>) &#8211; Higher value of data array size</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyschedcl.pyschedcl.Kernel.release_buffers">
+<code class="descname">release_buffers</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyschedcl/pyschedcl.html#Kernel.release_buffers"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyschedcl.pyschedcl.Kernel.release_buffers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Releases all buffers of a Kernel Object for a particular device given in obj</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<em>String</em>) &#8211; Specifies Kernel object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyschedcl.pyschedcl.Kernel.set_kernel_args">
+<code class="descname">set_kernel_args</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyschedcl/pyschedcl.html#Kernel.set_kernel_args"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyschedcl.pyschedcl.Kernel.set_kernel_args" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets Kernel Arguments (Buffers and Variable Arguments).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<em>String</em>) &#8211; Device Type (cpu or gpu)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="pyschedcl.pyschedcl.blank_fn">
+<code class="descclassname">pyschedcl.pyschedcl.</code><code class="descname">blank_fn</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyschedcl/pyschedcl.html#blank_fn"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyschedcl.pyschedcl.blank_fn" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="pyschedcl.pyschedcl.build_kernel_from_info">
+<code class="descclassname">pyschedcl.pyschedcl.</code><code class="descname">build_kernel_from_info</code><span class="sig-paren">(</span><em>info_file_name</em>, <em>gpus</em>, <em>cpus</em>, <em>ctxs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyschedcl/pyschedcl.html#build_kernel_from_info"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyschedcl.pyschedcl.build_kernel_from_info" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="pyschedcl.pyschedcl.compare_and_swap">
+<code class="descclassname">pyschedcl.pyschedcl.</code><code class="descname">compare_and_swap</code><span class="sig-paren">(</span><em>testval</em>, <em>newval</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyschedcl/pyschedcl.html#compare_and_swap"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyschedcl.pyschedcl.compare_and_swap" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="pyschedcl.pyschedcl.convert_dtime">
+<code class="descclassname">pyschedcl.pyschedcl.</code><code class="descname">convert_dtime</code><span class="sig-paren">(</span><em>ts</em>, <em>dev_type</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyschedcl/pyschedcl.html#convert_dtime"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyschedcl.pyschedcl.convert_dtime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts given OpenCL device timestamp ts to corresponding host time datetime.datetime.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>ts</strong> &#8211; </li>
+<li><strong>dev_type</strong> &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyschedcl.pyschedcl.convert_info_to_json">
+<code class="descclassname">pyschedcl.pyschedcl.</code><code class="descname">convert_info_to_json</code><span class="sig-paren">(</span><em>old_file_name</em>, <em>new_file_name=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyschedcl/pyschedcl.html#convert_info_to_json"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyschedcl.pyschedcl.convert_info_to_json" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="pyschedcl.pyschedcl.convert_json_to_info">
+<code class="descclassname">pyschedcl.pyschedcl.</code><code class="descname">convert_json_to_info</code><span class="sig-paren">(</span><em>old_file_name</em>, <em>new_file_name=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyschedcl/pyschedcl.html#convert_json_to_info"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyschedcl.pyschedcl.convert_json_to_info" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="pyschedcl.pyschedcl.create_command_queue_for_each">
+<code class="descclassname">pyschedcl.pyschedcl.</code><code class="descname">create_command_queue_for_each</code><span class="sig-paren">(</span><em>devs</em>, <em>ctx</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyschedcl/pyschedcl.html#create_command_queue_for_each"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyschedcl.pyschedcl.create_command_queue_for_each" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="pyschedcl.pyschedcl.cs_logic">
+<code class="descclassname">pyschedcl.pyschedcl.</code><code class="descname">cs_logic</code><span class="sig-paren">(</span><em>argument</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyschedcl/pyschedcl.html#cs_logic"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyschedcl.pyschedcl.cs_logic" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="pyschedcl.pyschedcl.ctype">
+<code class="descclassname">pyschedcl.pyschedcl.</code><code class="descname">ctype</code><span class="sig-paren">(</span><em>dtype</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyschedcl/pyschedcl.html#ctype"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyschedcl.pyschedcl.ctype" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a string datatype to corresponding Numpy datatype.
+User can also define new datatypes using user_defined parameter.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyschedcl.pyschedcl.dump_device_history">
+<code class="descclassname">pyschedcl.pyschedcl.</code><code class="descname">dump_device_history</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyschedcl/pyschedcl.html#dump_device_history"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyschedcl.pyschedcl.dump_device_history" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="pyschedcl.pyschedcl.generate_unique_id">
+<code class="descclassname">pyschedcl.pyschedcl.</code><code class="descname">generate_unique_id</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyschedcl/pyschedcl.html#generate_unique_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyschedcl.pyschedcl.generate_unique_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates and returns a unique id string.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyschedcl.pyschedcl.get_multiple_devices">
+<code class="descclassname">pyschedcl.pyschedcl.</code><code class="descname">get_multiple_devices</code><span class="sig-paren">(</span><em>platform</em>, <em>dev_type</em>, <em>num_devs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyschedcl/pyschedcl.html#get_multiple_devices"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyschedcl.pyschedcl.get_multiple_devices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get Multiple Devices given a platform and dev type.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyschedcl.pyschedcl.get_platform">
+<code class="descclassname">pyschedcl.pyschedcl.</code><code class="descname">get_platform</code><span class="sig-paren">(</span><em>vendor_name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyschedcl/pyschedcl.html#get_platform"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyschedcl.pyschedcl.get_platform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets platform given a vendor name</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyschedcl.pyschedcl.get_single_device">
+<code class="descclassname">pyschedcl.pyschedcl.</code><code class="descname">get_single_device</code><span class="sig-paren">(</span><em>platform</em>, <em>dev_type</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyschedcl/pyschedcl.html#get_single_device"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyschedcl.pyschedcl.get_single_device" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get Single Device given a platform and dev type.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyschedcl.pyschedcl.get_sub_devices">
+<code class="descclassname">pyschedcl.pyschedcl.</code><code class="descname">get_sub_devices</code><span class="sig-paren">(</span><em>platform</em>, <em>dev_type</em>, <em>num_devs</em>, <em>total_compute=16</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyschedcl/pyschedcl.html#get_sub_devices"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyschedcl.pyschedcl.get_sub_devices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get Sub Devices given a platform and dev type.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyschedcl.pyschedcl.host_initialize">
+<code class="descclassname">pyschedcl.pyschedcl.</code><code class="descname">host_initialize</code><span class="sig-paren">(</span><em>num_gpus=4</em>, <em>num_cpus=2</em>, <em>local=False</em>, <em>cpu_platform='Intel(R) OpenCL'</em>, <em>gpu_platform='NVIDIA CUDA'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyschedcl/pyschedcl.html#host_initialize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyschedcl.pyschedcl.host_initialize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set local=True if you device doesn&#8217;t support GPU. But you still
+want to pretend as if you have one.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>gpu_platform</strong> &#8211; </li>
+<li><strong>cpu_platform</strong> &#8211; </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyschedcl.pyschedcl.log_device_history">
+<code class="descclassname">pyschedcl.pyschedcl.</code><code class="descname">log_device_history</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyschedcl/pyschedcl.html#log_device_history"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyschedcl.pyschedcl.log_device_history" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="pyschedcl.pyschedcl.make_ctype">
+<code class="descclassname">pyschedcl.pyschedcl.</code><code class="descname">make_ctype</code><span class="sig-paren">(</span><em>dtype</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyschedcl/pyschedcl.html#make_ctype"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyschedcl.pyschedcl.make_ctype" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a vector datatype.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dtype</strong> &#8211; </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyschedcl.pyschedcl.make_user_defined_dtype">
+<code class="descclassname">pyschedcl.pyschedcl.</code><code class="descname">make_user_defined_dtype</code><span class="sig-paren">(</span><em>ctxs</em>, <em>name</em>, <em>definition</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyschedcl/pyschedcl.html#make_user_defined_dtype"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyschedcl.pyschedcl.make_user_defined_dtype" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="pyschedcl.pyschedcl.multiple_round">
+<code class="descclassname">pyschedcl.pyschedcl.</code><code class="descname">multiple_round</code><span class="sig-paren">(</span><em>elms</em>, <em>percent</em>, <em>multiples</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyschedcl/pyschedcl.html#multiple_round"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyschedcl.pyschedcl.multiple_round" title="Permalink to this definition">¶</a></dt>
+<dd><p>Partition such that the partitioned datasets are multiples of given number.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyschedcl.pyschedcl.notify_callback">
+<code class="descclassname">pyschedcl.pyschedcl.</code><code class="descname">notify_callback</code><span class="sig-paren">(</span><em>kernel</em>, <em>dev_type</em>, <em>dev_no</em>, <em>event_type</em>, <em>callback=&lt;function blank_fn&gt;</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyschedcl/pyschedcl.html#notify_callback"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyschedcl.pyschedcl.notify_callback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper function that generates and returns a callback function based on parameters.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyschedcl.pyschedcl.notify_callback_test1">
+<code class="descclassname">pyschedcl.pyschedcl.</code><code class="descname">notify_callback_test1</code><span class="sig-paren">(</span><em>kernel</em>, <em>device</em>, <em>dev_no</em>, <em>event_type</em>, <em>events</em>, <em>host_event_info</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyschedcl/pyschedcl.html#notify_callback_test1"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyschedcl.pyschedcl.notify_callback_test1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="pyschedcl.pyschedcl.part_round">
+<code class="descclassname">pyschedcl.pyschedcl.</code><code class="descname">part_round</code><span class="sig-paren">(</span><em>elms</em>, <em>percent</em>, <em>exact=-1</em>, <em>total=100</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pyschedcl.pyschedcl.part_round" title="Permalink to this definition">¶</a></dt>
+<dd><p>Partitions dataset in a predictable way.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyschedcl.pyschedcl.partition_round">
+<code class="descclassname">pyschedcl.pyschedcl.</code><code class="descname">partition_round</code><span class="sig-paren">(</span><em>elms</em>, <em>percent</em>, <em>exact=-1</em>, <em>total=100</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyschedcl/pyschedcl.html#partition_round"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyschedcl.pyschedcl.partition_round" title="Permalink to this definition">¶</a></dt>
+<dd><p>Partitions dataset in a predictable way.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyschedcl.pyschedcl.total_device_time">
+<code class="descclassname">pyschedcl.pyschedcl.</code><code class="descname">total_device_time</code><span class="sig-paren">(</span><em>kernels</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyschedcl/pyschedcl.html#total_device_time"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyschedcl.pyschedcl.total_device_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-pyschedcl">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pyschedcl" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PySchedCL 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2017, Anirban Ghose, Lokesh Dokara, Srijeeta Maity.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.6.
+    </div>
+  </body>
+</html>

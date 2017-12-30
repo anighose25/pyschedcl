@@ -1,0 +1,56 @@
+{
+    "globalWorkSize": "[dataset]",
+    "inputBuffers": [
+        {
+            "break": 1,
+            "pos": 0, 
+            "size": "dataset**2", 
+            "type": "float"
+        }, 
+        {
+            "break": 0, 
+            "pos": 1, 
+            "size": "dataset**2", 
+            "type": "float"
+        }
+    ], 
+    "name": "gemm", 
+    "outputBuffers": [
+        {
+            "break": 0, 
+            "pos": 2, 
+            "size": "dataset**2", 
+            "type": "float"
+        }
+    ], 
+    "partition": 8, 
+    "src": "gemm.cl", 
+    "varArguments": [
+        {
+            "pos": 3, 
+            "type": "float", 
+            "value": "32412"
+        }, 
+        {
+            "pos": 4, 
+            "type": "float", 
+            "value": "2123"
+        }, 
+        {
+            "pos": 5, 
+            "type": "int", 
+            "value": "dataset"
+        }, 
+        {
+            "pos": 6, 
+            "type": "int", 
+            "value": "dataset"
+        }, 
+        {
+            "pos": 7, 
+            "type": "int", 
+            "value": "dataset"
+        }
+    ], 
+    "workDimension": 1
+}

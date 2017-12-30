@@ -1,0 +1,37 @@
+{
+    "globalWorkSize": "[dataset]", 
+    "inputBuffers": [
+        {
+            "break": 1, 
+            "pos": 0, 
+            "size": "dataset", 
+            "type": "float"
+        }
+    ], 
+    "localArguments": [
+        {
+            "pos": 3, 
+            "size": "dataset", 
+            "type": "float"
+        }
+    ], 
+    "name": "reduce4", 
+    "outputBuffers": [
+        {
+            "break": 0, 
+            "pos": 1, 
+            "size": "dataset", 
+            "type": "float"
+        }
+    ], 
+    "partition": 10, 
+    "src": "oclReduction_kernel.cl", 
+    "varArguments": [
+        {
+            "pos": 2, 
+            "type": "uint", 
+            "value": "partition_round(dataset, size_percent)"
+        }
+    ], 
+    "workDimension": 1
+}

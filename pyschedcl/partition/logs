@@ -1,0 +1,348 @@
+DEBUG:pyopencl.cache:build program: binary cache hit (key: bf173e7c42333a77a9b43ccb140f6095)
+DEBUG:pyopencl.cache:build program: binary cache hit (key: bf173e7c42333a77a9b43ccb140f6095)
+DEBUG:pyopencl.cache:build program: binary cache hit (key: bf173e7c42333a77a9b43ccb140f6095)
+DEBUG:pyopencl.cache:build program: binary cache hit (key: bf173e7c42333a77a9b43ccb140f6095)
+DEBUG:pyopencl.cffi_cl:build program: start
+DEBUG:pyopencl.cffi_cl:build program: completed, success
+DEBUG:pyopencl.cache:build program: binary cache hit (key: 601ee40fc35b9b0236bb00cb040df53b)
+DEBUG:pyopencl.cache:build program: binary cache hit (key: 601ee40fc35b9b0236bb00cb040df53b)
+DEBUG:pyopencl.cffi_cl:build program: start
+DEBUG:pyopencl.cffi_cl:build program: completed, success
+DEBUG:root:Dispatch function call for atax_kernel2 starts at 2017-12-16 02:36:20.695955
+DEBUG:root:Evaluation of kernel arguments for atax_kernel2 on GPU
+DEBUG:root:Creation of buffers for atax_kernel2 on GPU
+DEBUG:root:Creating Input Buffers
+DEBUG:root:SLICING: get_slice_values -> Original Buffer Size: 4194304
+DEBUG:root:SLICING: get_slice_values -> partition_multiples: [1]
+DEBUG:root:SLICING_gpu: Create_Input_Buffers_element_offset : 0
+DEBUG:root:SLICING_gpu: Create_Input_Buffers_number_of_elements : 4194304
+DEBUG:root:SLICING: get_slice_values -> Original Buffer Size: 2048
+DEBUG:root:SLICING: get_slice_values -> partition_multiples: [1]
+DEBUG:root:SLICING: get_slice_values -> multiple_round -> x: 2048
+DEBUG:root:SLICING: get_slice_values -> multiple_round -> partition_round (if percent=50) returns: 0
+DEBUG:root:SLICING: get_slice_values -> multiple_round -> returns: 0
+DEBUG:root:SLICING: get_slice_values -> multiple_round -> partition_round (if percent=50) returns: 0
+DEBUG:root:SLICING: get_slice_values -> multiple_round -> x: 2048
+DEBUG:root:SLICING: get_slice_values -> multiple_round -> returns: 1648
+DEBUG:root:SLICING_gpu: Create_Input_Buffers_element_offset : 0
+DEBUG:root:SLICING_gpu: Create_Input_Buffers_number_of_elements : 1648
+DEBUG:root:Creating Output Buffers
+DEBUG:root:SLICING: get_slice_values -> Original Buffer Size: 2048
+DEBUG:root:SLICING: get_slice_values -> partition_multiples: [1]
+DEBUG:root:SLICING_gpu: Create_Output_Buffers_element_offset : 0
+DEBUG:root:SLICING_gpu: Create_Output_Buffers_number_of_elements : 2048
+DEBUG:root:Creating IO Buffers
+DEBUG:root:Setting kernel arguments for atax_kernel2 on GPU
+DEBUG:root:Calling enqueue_write_buffers for gpu
+DEBUG:root:Enqueuing Write Buffers
+DEBUG:root:SLICING: get_slice_values -> Original Buffer Size: 4194304
+DEBUG:root:SLICING: get_slice_values -> partition_multiples: [1]
+DEBUG:root:SLICING_gpu: Enqueue_Write_Input_Buffers_element_offset : 0
+DEBUG:root:SLICING_gpu: Enqueue_Write_Input_Buffers_number_of_elements : 4194304
+DEBUG:root:SLICING: get_slice_values -> Original Buffer Size: 2048
+DEBUG:root:SLICING: get_slice_values -> partition_multiples: [1]
+DEBUG:root:SLICING: get_slice_values -> multiple_round -> x: 2048
+DEBUG:root:SLICING: get_slice_values -> multiple_round -> partition_round (if percent=50) returns: 0
+DEBUG:root:SLICING: get_slice_values -> multiple_round -> returns: 0
+DEBUG:root:SLICING: get_slice_values -> multiple_round -> partition_round (if percent=50) returns: 0
+DEBUG:root:SLICING: get_slice_values -> multiple_round -> x: 2048
+DEBUG:root:SLICING: get_slice_values -> multiple_round -> returns: 1648
+DEBUG:root:SLICING_gpu: Enqueue_Write_Input_Buffers_element_offset : 0
+DEBUG:root:SLICING_gpu: Enqueue_Write_Input_Buffers_number_of_elements : 1648
+DEBUG:root:Number of write buffers 2
+DEBUG:root:Calling enqueue_nd_range_kernel for gpu
+DEBUG:root:SLICING: get_slice_values -> multiple_round -> x: 2048
+DEBUG:root:SLICING: get_slice_values -> multiple_round -> returns: 1648
+DEBUG:root:Enqueue ND Range Event
+DEBUG:root:Calling enqueue_read_buffers for gpu
+DEBUG:root:Enqueuing Read Buffers
+DEBUG:root:SLICING: get_slice_values -> Original Buffer Size: 2048
+DEBUG:root:SLICING: get_slice_values -> partition_multiples: [1]
+DEBUG:root:SLICING_gpu: Enqueue_Read_Output_Buffers_element_offset : 0
+DEBUG:root:SLICING_gpu: Enqueue_Read_Output_Buffers_number_of_elements : 2048
+DEBUG:root:Number of read buffers 1
+DEBUG:root:Evaluation of kernel arguments for atax_kernel2 on CPU
+DEBUG:root:SLICING: get_slice_values -> multiple_round -> partition_round (if percent=50) returns: 400
+DEBUG:root:Calling creating_buffers for atax_kernel2 on CPU
+DEBUG:root:Creating Input Buffers
+DEBUG:root:SLICING: get_slice_values -> Original Buffer Size: 4194304
+DEBUG:root:SLICING: get_slice_values -> partition_multiples: [1]
+DEBUG:root:SLICING_cpu: Create_Input_Buffers_element_offset : 0
+DEBUG:root:SLICING_cpu: Create_Input_Buffers_number_of_elements : 4194304
+DEBUG:root:SLICING: get_slice_values -> Original Buffer Size: 2048
+DEBUG:root:SLICING: get_slice_values -> partition_multiples: [1]
+DEBUG:root:SLICING: get_slice_values -> multiple_round -> x: 2048
+DEBUG:root:SLICING: get_slice_values -> multiple_round -> returns: 1648
+DEBUG:root:SLICING: get_slice_values -> multiple_round -> x: 2048
+DEBUG:root:SLICING: get_slice_values -> multiple_round -> partition_round (if percent=50) returns: 400
+DEBUG:root:SLICING: get_slice_values -> multiple_round -> returns: 400
+DEBUG:root:SLICING: get_slice_values -> multiple_round -> partition_round (if percent=50) returns: 400
+DEBUG:root:SLICING_cpu: Create_Input_Buffers_element_offset : 1648
+DEBUG:root:SLICING_cpu: Create_Input_Buffers_number_of_elements : 400
+DEBUG:root:Creating Output Buffers
+DEBUG:root:SLICING: get_slice_values -> Original Buffer Size: 2048
+DEBUG:root:SLICING: get_slice_values -> partition_multiples: [1]
+DEBUG:root:SLICING_cpu: Create_Output_Buffers_element_offset : 0
+DEBUG:root:SLICING_cpu: Create_Output_Buffers_number_of_elements : 2048
+DEBUG:root:Creating IO Buffers
+DEBUG:root:Calling set_kernel_args for atax_kernel2 on CPU
+DEBUG:root:Calling enqueue_write_buffers for atax_kernel2 on CPU
+DEBUG:root:Enqueuing Write Buffers
+DEBUG:root:SLICING: get_slice_values -> Original Buffer Size: 4194304
+DEBUG:root:SLICING: get_slice_values -> partition_multiples: [1]
+DEBUG:root:SLICING_cpu: Enqueue_Write_Input_Buffers_element_offset : 0
+DEBUG:root:SLICING_cpu: Enqueue_Write_Input_Buffers_number_of_elements : 4194304
+DEBUG:root:SLICING: get_slice_values -> Original Buffer Size: 2048
+DEBUG:root:SLICING: get_slice_values -> partition_multiples: [1]
+DEBUG:root:SLICING: get_slice_values -> multiple_round -> x: 2048
+DEBUG:root:SLICING: get_slice_values -> multiple_round -> returns: 1648
+DEBUG:root:SLICING: get_slice_values -> multiple_round -> x: 2048
+DEBUG:root:SLICING: get_slice_values -> multiple_round -> partition_round (if percent=50) returns: 400
+DEBUG:root:SLICING: get_slice_values -> multiple_round -> returns: 400
+DEBUG:root:SLICING: get_slice_values -> multiple_round -> partition_round (if percent=50) returns: 400
+DEBUG:root:SLICING_cpu: Enqueue_Write_Input_Buffers_element_offset : 1648
+DEBUG:root:SLICING_cpu: Enqueue_Write_Input_Buffers_number_of_elements : 400
+DEBUG:root:Number of write buffers 2
+DEBUG:root:Evaluation of enqueue_nd_range_kernel for atax_kernel2 on GPU
+DEBUG:root:SLICING: get_slice_values -> multiple_round -> x: 2048
+DEBUG:root:SLICING: get_slice_values -> multiple_round -> partition_round (if percent=50) returns: 400
+DEBUG:root:SLICING: get_slice_values -> multiple_round -> returns: 400
+DEBUG:root:SLICING: get_slice_values -> multiple_round -> partition_round (if percent=50) returns: 400
+DEBUG:root:Enqueue ND Range Event
+DEBUG:root:Evaluation of enqueue_read_buffers for atax_kernel2 on GPU
+DEBUG:root:Enqueuing Read Buffers
+DEBUG:root:SLICING: get_slice_values -> Original Buffer Size: 2048
+DEBUG:root:SLICING: get_slice_values -> partition_multiples: [1]
+DEBUG:root:SLICING_cpu: Enqueue_Read_Output_Buffers_element_offset : 0
+DEBUG:root:SLICING_cpu: Enqueue_Read_Output_Buffers_number_of_elements : 2048
+DEBUG:root:Number of read buffers 1
+DEBUG:root:ke.dispatch_end 2017-12-16 02:36:20.720649 on CPU & GPU
+DEBUG:root:Evaluation of kernel arguments for atax_kernel2 on GPU
+DEBUG:root:Number of events 6
+DEBUG:root:Dispatch function call for atax_kernel2 ends at 2017-12-16 02:36:20.721752
+DEBUG:root:TRIGGERED atax_kernel2 WRITE execution finished for device gpu
+DEBUG:root:Resetting bolt value by gpu WRITE event
+DEBUG:root:TRIGGERED atax_kernel2 KERNEL execution finished for device gpu
+DEBUG:root:Resetting bolt value by gpu KERNEL event
+DEBUG:root:TRIGGERED atax_kernel2 WRITE execution finished for device cpu
+DEBUG:root:PROBE:  atax_kernel2 cpu KERNEL event
+DEBUG:root:TRIGGERED atax_kernel2 KERNEL execution finished for device cpu
+DEBUG:root:Resetting bolt value by cpu KERNEL event
+DEBUG:root:Resetting bolt value by cpu WRITE event
+DEBUG:root:TRIGGERED atax_kernel2 READ execution finished for device cpu
+DEBUG:root:<pyschedcl.HostEvents object at 0x7f274f667310>
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:Pushing info onto cpu0
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:PROBE:  atax_kernel2 gpu READ event
+DEBUG:root:Resetting bolt value by cpu READ event
+DEBUG:root:TRIGGERED atax_kernel2 READ execution finished for device gpu
+DEBUG:root:<pyschedcl.HostEvents object at 0x7f274f655f90>
+DEBUG:root:Pushing info onto gpu0
+DEBUG:root:Resetting bolt value by gpu READ event

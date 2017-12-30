@@ -1,0 +1,56 @@
+{
+    "src": "kmeans.cl", 
+    "name": "kmeans_kernel_c", 
+    "inputBuffers": [
+        {
+            "break": 1, 
+            "type": "float", 
+            "pos": 0, 
+            "size": "dataset**2"
+        }, 
+        {
+            "break": 1, 
+            "type": "float", 
+            "pos": 1, 
+            "size": "dataset"
+        }
+    ], 
+    "partition": 8, 
+    "varArguments": [
+        {
+            "value": "partition_round(dataset, size_percent)", 
+            "type": "int", 
+            "pos": 3
+        }, 
+        {
+            "value": "0", 
+            "type": "int", 
+            "pos": 4
+        }, 
+        {
+            "value": "0", 
+            "type": "int", 
+            "pos": 5
+        }, 
+        {
+            "value": "0", 
+            "type": "int", 
+            "pos": 6
+        }, 
+        {
+            "value": "0", 
+            "type": "int", 
+            "pos": 7
+        }
+    ], 
+    "workDimension": 1, 
+    "globalWorkSize": "[dataset]", 
+    "outputBuffers": [
+        {
+            "break": 1, 
+            "type": "int", 
+            "pos": 2, 
+            "size": "dataset"
+        }
+    ]
+}

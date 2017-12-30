@@ -1,0 +1,35 @@
+{
+    "globalWorkSize": "[dataset]",
+    "inputBuffers": [
+        {
+            "break": 0, 
+            "pos": 0, 
+            "size": "dataset**2", 
+            "type": "float"
+        }
+    ], 
+    "name": "covar_kernel", 
+    "outputBuffers": [
+        {
+            "break": 0, 
+            "pos": 1, 
+            "size": "dataset**2", 
+            "type": "float"
+        }
+    ], 
+    "partition": 10, 
+    "src": "covariance.cl", 
+    "varArguments": [
+        {
+            "pos": 2, 
+            "type": "int", 
+            "value": "dataset"
+        }, 
+        {
+            "pos": 3, 
+            "type": "int", 
+            "value": "partition_round(dataset, size_percent)"
+        }
+    ], 
+    "workDimension": 1
+}
