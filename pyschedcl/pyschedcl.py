@@ -255,7 +255,6 @@ def multiple_round(elms, percent, multiples, **kwargs):
     for multiple in multiples:
         if elms % multiple == 0 and elms > multiple:
             x = elms / multiple
-            logging.debug("PARTITION: get_slice_values -> multiple_round -> x: %s", x)
             return partition_round(x, percent, **kwargs) * multiple
 
 
@@ -315,7 +314,7 @@ def make_user_defined_dtype(ctxs, name, definition):
 
 def notify_callback(kernel, device, dev_no, event_type, events, host_event_info, callback=blank_fn):
     """
-    A wrapper function that generates and returns a call-back function based on parameters. This callback function is run whenever a enqueue operation finsishes execution. User can suitably modify callback functions to carry out further processing run after completion of enqueue read buffers operation indicating completion of a kernel task.
+    A wrapper function that generates and returns a call-back function based on parameters. This callback function is run whenever a enqueue operation finishes execution. User can suitably modify callback functions to carry out further processing run after completion of enqueue read buffers operation indicating completion of a kernel task.
 
     :param kernel: Kernel Object
     :type kernel:  pyschedcl.Kernel object
@@ -354,8 +353,8 @@ def notify_callback(kernel, device, dev_no, event_type, events, host_event_info,
             elif event_type == 'READ':
                 host_event_info.read_end = time.time()
                 global device_history
-                logging.debug(host_event_info)
-                logging.debug("Pushing info onto " + str(device) + str(dev_no))
+                logging.debug("CALLBACK : " +str(host_event_info))
+                logging.debug("CALLBACK : Pushing info onto " + str(device) + str(dev_no))
                 device_history[device][dev_no].append(host_event_info)
 
                 if kernel.multiple_break:
@@ -421,12 +420,12 @@ def generate_unique_id():
 
 class Kernel(object):
     """
-    Class to handle all operations perfomed on OpenCL kernel.
+    Class to handle all operations performed on OpenCL kernel.
 
     :ivar dataset: An integer representing size of the data on which kernel will be dispatched.
     :ivar id: An id that is used identify a kernel uniquely.
     :ivar eco: A dictionary mapping between size of dataset and Estimated Computation Overhead
-    :ivar name: name of the Kernel
+    :ivar name: Name of the Kernel
     :ivar src: Path to the Kernel source file.
     :ivar partition: An integer denoting the partition class of the kernel.
     :ivar work_dimension: Work Dimension of the Kernel.
@@ -442,7 +441,7 @@ class Kernel(object):
     :ivar local_args: Information regarding Local Arguments of the kernel.
     :ivar kernel objects: Dictionary mapping between devices and compiled and built pyopencl.Kernel objects.
     :ivar events: Dictionary containing pyschedcl.KEvents.
-    :ivar source: String containg contents of kernel file.
+    :ivar source: String containing contents of kernel file.
     :ivar clevents: Dictionary containing pyopencl.Events.
     """
 
@@ -653,7 +652,7 @@ class Kernel(object):
 
     def build_kernel(self, gpus, cpus, ctxs):
         """
-        Builds Kernels from kernel_src/ for each device and stores binaries in self.kernel_objects dict.
+        Builds Kernels from the directory kernel_src/ for each device and stores binaries in self.kernel_objects dict.
 
         :param gpus: List of OpenCL GPU Devices
         :type gpus: list of pyopencl.device objects
@@ -816,12 +815,11 @@ class Kernel(object):
         :rtype: Tuple
 
         """
-        logging.debug("PARTITION: %s get_slice_values -> Original Buffer Size: %s", self.name, buffer_info['size'])
+        logging.debug("PARTITION : %s get_slice_values -> Original Buffer Size: %s", self.name, buffer_info['size'])
         if 'chunk' in buffer_info:
             partition_multiples = [buffer_info['chunk']] + self.partition_multiples
         else:
             partition_multiples = self.partition_multiples
-        logging.debug("PARTITION: %s get_slice_values -> partition_multiples: %s", self.name, partition_multiples)
 
         if buffer_info['break'] != 1:
             eo = 0
@@ -851,16 +849,16 @@ class Kernel(object):
         :param kwargs:
         :type kwargs:
         """
-        logging.debug("Creating Input Buffers")
+        logging.debug("PARTITION : Creating Input Buffers %s",obj)
         for i in range(len(self.buffer_info['input'])):
             if self.buffer_info['input'][i]['create']:
                 eo, ne = self.get_slice_values(self.buffer_info['input'][i], size_percent, offset_percent, **kwargs)
-                logging.debug("PARTITION_%s: %s Create_Input_Buffers_element_offset : %s", obj, self.name, eo)
-                logging.debug("PARTITION_%s: %s Create_Input_Buffers_number_of_elements : %s", obj, self.name, ne)
+                logging.debug("PARTITION_%s : %s Create_Input_Buffers_element_offset : %s", obj, self.name, eo)
+                logging.debug("PARTITION_%s : %s Create_Input_Buffers_number_of_elements : %s", obj, self.name, ne)
                 self.input_buffers[obj][i] = cl.Buffer(ctx, cl.mem_flags.READ_WRITE,
                                                        size=self.data['input'][i][eo:eo + ne].nbytes)
 
-        logging.debug("Creating Output Buffers")
+        logging.debug("PARTITION : Creating Output Buffers %s", obj)
         for i in range(len(self.buffer_info['output'])):
             if self.buffer_info['output'][i]['create']:
                 eo, ne = self.get_slice_values(self.buffer_info['output'][i], size_percent, offset_percent, **kwargs)
@@ -868,7 +866,7 @@ class Kernel(object):
                 logging.debug("PARTITION_%s: %s Create_Output_Buffers_number_of_elements : %s", obj, self.name, ne)
                 self.output_buffers[obj][i] = cl.Buffer(ctx, cl.mem_flags.READ_WRITE,
                                                         size=self.data['output'][i][eo:eo + ne].nbytes)
-        logging.debug("Creating IO Buffers")
+        logging.debug("PARTITION : Creating IO Buffers %s",obj)
         for i in range(len(self.buffer_info['io'])):
             if self.buffer_info['io'][i]['create']:
                 eo, ne = self.get_slice_values(self.buffer_info['io'][i], size_percent, offset_percent, **kwargs)
@@ -914,13 +912,13 @@ class Kernel(object):
         :type queue: pyopencl.CommandQueue
         :param q_id: ID of queue
         :type q_id: Integer
-        :param obj: Device Type (cpu or gpu)
+        :param obj: Device Type (CPU or GPU)
         :type obj: String
         :param size_percent: Percentage of problem space to be processed
         :type size_percent: Integer
         :param offset_percent: Percentage for offset required for selection of host array space to be copied to buffer
         :type offset_percent: Integer
-        :param deps: Intial PyOpenCL Event on which subsequent write operations will be dependent stored in a list
+        :param deps: Initial PyOpenCL Event on which subsequent write operations will be dependent stored in a list
         :type deps: list of pyopencl.Event Objects
         :param kwargs:
         :type kwargs:
@@ -934,14 +932,14 @@ class Kernel(object):
             depends = [None]
         if deps:
             depends[0] = deps
-        logging.debug("Enqueuing Write Buffers")
+        logging.debug("PARTITION : Enqueuing Write Buffers %s",obj)
         kwargs['host_event'].write_start = time.time()
         start_barrier_event = cl.enqueue_barrier(queue, wait_for=depends[0])
         for i in range(len(self.input_buffers[obj])):
             if self.buffer_info['input'][i]['enq_write']:
                 eo, ne = self.get_slice_values(self.buffer_info['input'][i], size_percent, offset_percent, **kwargs)
-                logging.debug("PARTITION_%s: %s Enqueue_Write_Input_Buffers_element_offset : %s", obj, self.name, eo)
-                logging.debug("PARTITION_%s: %s Enqueue_Write_Input_Buffers_number_of_elements : %s", obj, self.name,
+                logging.debug("PARTITION_%s : %s Enqueue_Write_Input_Buffers_element_offset : %s", obj, self.name, eo)
+                logging.debug("PARTITION_%s : %s Enqueue_Write_Input_Buffers_number_of_elements : %s", obj, self.name,
                               ne)
                 iev[i] = cl.enqueue_copy(queue, self.input_buffers[obj][i], self.data['input'][i][eo:eo + ne],
                                          is_blocking=False, wait_for=depends[i])
@@ -951,12 +949,12 @@ class Kernel(object):
         for i in range(len(self.io_buffers[obj])):
             if self.buffer_info['io'][i]['enq_write']:
                 eo, ne = self.get_slice_values(self.buffer_info['io'][i], size_percent, offset_percent, **kwargs)
-                logging.debug("PARTITION_%s: %s Enqueue_Write_IO_Buffers_element_offset : %s", obj, self.name, eo)
-                logging.debug("PARTITION_%s: %s Enqueue_Write_IO_number_of_elements : %s", obj, self.name, ne)
+                logging.debug("PARTITION_%s : %s Enqueue_Write_IO_Buffers_element_offset : %s", obj, self.name, eo)
+                logging.debug("PARTITION_%s : %s Enqueue_Write_IO_number_of_elements : %s", obj, self.name, ne)
                 ioev[i] = cl.enqueue_copy(queue, self.io_buffers[obj][i], self.data['io'][i][eo:eo + ne],
                                           is_blocking=False, wait_for=depends[i + j])
         iev.extend(ioev)
-        logging.debug("Number of write buffers %d" % (len(iev)))
+        logging.debug("PARTITION : Number of write buffers %d" % (len(iev)))
         barrier_event = cl.enqueue_barrier(queue, wait_for=iev)
         barrier_event.set_callback(cl.command_execution_status.COMPLETE,
                                    notify_callback(self, obj, q_id, 'WRITE', iev, host_event_info=kwargs['host_event']))
@@ -1000,7 +998,6 @@ class Kernel(object):
         else:
             ev = cl.enqueue_nd_range_kernel(queue, self.kernel_objects[obj], global_work_size, None,
                                             wait_for=depends[0])
-        logging.debug("PARTITION_%s: %s Enqueue_ ND_Range_Event : %s", obj, self.name, ev)
 
         barrier_event = cl.enqueue_barrier(queue, wait_for=[ev])
         barrier_event.set_callback(cl.command_execution_status.COMPLETE,
@@ -1034,7 +1031,7 @@ class Kernel(object):
         """
 
         oev, ioev = [None] * len(self.output_buffers[obj]), [None] * len(self.io_buffers[obj])
-        logging.debug("Enqueuing Read Buffers")
+        logging.debug("PARTITION : Enqueuing Read Buffers %s",obj)
         depends = [None] * (len(self.output_buffers[obj]) + len(self.io_buffers[obj]))
         if len(depends) == 0:
             depends = [None]
@@ -1044,8 +1041,8 @@ class Kernel(object):
         for i in range(len(self.output_buffers[obj])):
             if self.buffer_info['output'][i]['enq_read']:
                 eo, ne = self.get_slice_values(self.buffer_info['output'][i], size_percent, offset_percent, **kwargs)
-                logging.debug("PARTITION_%s: %s Enqueue_Read_Output_Buffers_element_offset : %s", obj, self.name, eo)
-                logging.debug("PARTITION_%s: %s Enqueue_Read_Output_Buffers_number_of_elements : %s", obj, self.name,
+                logging.debug("PARTITION_%s : %s Enqueue_Read_Output_Buffers_element_offset : %s", obj, self.name, eo)
+                logging.debug("PARTITION_%s : %s Enqueue_Read_Output_Buffers_number_of_elements : %s", obj, self.name,
                               ne)
                 oev[i] = cl.enqueue_copy(queue, self.data['output'][i][eo:eo + ne], self.output_buffers[obj][i],
                                          is_blocking=False, wait_for=depends[i])
@@ -1053,12 +1050,12 @@ class Kernel(object):
         for i in range(len(self.io_buffers[obj])):
             if self.buffer_info['io'][i]['enq_read']:
                 eo, ne = self.get_slice_values(self.buffer_info['io'][i], size_percent, offset_percent, **kwargs)
-                logging.debug("PARTITION_%s: %s Enqueue_Read_IO_Buffers_element_offset : %s", obj, self.name, eo)
-                logging.debug("PARTITION_%s: %s Enqueue_Read_IO_Buffers_number_of_elements : %s", obj, self.name, ne)
+                logging.debug("PARTITION_%s : %s Enqueue_Read_IO_Buffers_element_offset : %s", obj, self.name, eo)
+                logging.debug("PARTITION_%s : %s Enqueue_Read_IO_Buffers_number_of_elements : %s", obj, self.name, ne)
                 ioev[i] = cl.enqueue_copy(queue, self.data['io'][i][eo:eo + ne], self.io_buffers[obj][i],
                                           is_blocking=False, wait_for=depends[i + j])
         oev.extend(ioev)
-        logging.debug("Number of read buffers %d" % (len(oev)))
+        logging.debug("PARTITION : Number of read buffers %d" % (len(oev)))
         barrier_event = cl.enqueue_barrier(queue, wait_for=oev)
         barrier_event.set_callback(cl.command_execution_status.COMPLETE,
                                    notify_callback(self, obj, q_id, 'READ', oev, host_event_info=kwargs['host_event'],
@@ -1077,7 +1074,7 @@ class Kernel(object):
         :type ctxs: dict
         :param cmd_qs: Dictionary of list of Command Queues
         :type cmd_qs: dict
-        :param dep:
+        :param dep: PyOpenCL Event on which subsequent write operations will be dependent on stored in a list
         :param partition: Integer from 0 to 10 or None denoting partition class value.
         :type partition: Integer
         :param callback: A function that will run on the host side once the kernel completes execution on the device. Handle unexpected arguments.
@@ -1087,7 +1084,7 @@ class Kernel(object):
         """
 
         dispatch_start = datetime.datetime.now()
-        logging.debug("Dispatch function call for %s starts at %s", self.name, dispatch_start)
+        logging.debug("DISPATCH : Dispatch function call for %s starts at %s", self.name, dispatch_start)
 
         gpu_host_events = HostEvents(self.name, self.id, dispatch_start=dispatch_start)
         cpu_host_events = HostEvents(self.name, self.id, dispatch_start=dispatch_start)
@@ -1123,19 +1120,19 @@ class Kernel(object):
             logging.debug("DISPATCH_gpu : Evaluation of kernel arguments for %s on GPU", self.name)
             self.eval_vargs(size_percent=size_percent, offset_percent=offset_percent)
             gpu_host_events.create_buf_start = time.time()
-            logging.debug("DISPATCH_gpu :Creation of buffers for %s on GPU", self.name)
+            logging.debug("DISPATCH_gpu : Creation of buffers for %s on GPU", self.name)
             self.create_buffers(ctxs['gpu'], 'gpu', size_percent, offset_percent)
             gpu_host_events.create_buf_end = time.time()
-            logging.debug("DISPATCH_gpu :Setting kernel arguments for %s on GPU", self.name)
+            logging.debug("DISPATCH_gpu : Setting kernel arguments for %s on GPU", self.name)
             self.set_kernel_args('gpu')
-            logging.debug("DISPATCH_gpu :Calling enqueue_write_buffers for gpu")
+            logging.debug("DISPATCH_gpu :Calling enqueue_write_buffers for GPU")
             gdone.append(self.enqueue_write_buffers(cmd_qs['gpu'][gpu], gpu, 'gpu', size_percent, offset_percent,
                                                     deps=[deps['gpu']], did=dispatch_id, host_event=gpu_host_events))
-            logging.debug("DISPATCH_gpu :Calling enqueue_nd_range_kernel for gpu")
+            logging.debug("DISPATCH_gpu : Calling enqueue_nd_range_kernel for GPU")
             gdone.append(
                 self.enqueue_nd_range_kernel(cmd_qs['gpu'][gpu], gpu, 'gpu', size_percent, 0, deps=[gdone[-1]],
                                              did=dispatch_id, host_event=gpu_host_events))
-            logging.debug("DISPATCH_gpu :Calling enqueue_read_buffers for gpu")
+            logging.debug("DISPATCH_gpu : Calling enqueue_read_buffers for GPU")
             gdone.append(self.enqueue_read_buffers(cmd_qs['gpu'][gpu], gpu, 'gpu', size_percent, offset_percent,
                                                    deps=[gdone[-1]], callback=callback, did=dispatch_id,
                                                    host_event=gpu_host_events))
@@ -1160,11 +1157,11 @@ class Kernel(object):
             logging.debug("DISPATCH_cpu : Calling enqueue_write_buffers for %s on CPU", self.name)
             cdone.append(self.enqueue_write_buffers(cmd_qs['cpu'][cpu], cpu, 'cpu', size_percent, offset_percent,
                                                     deps=[deps['cpu']], did=dispatch_id, host_event=cpu_host_events))
-            logging.debug("DISPATCH_cpu : Evaluation of enqueue_nd_range_kernel for %s on GPU", self.name)
+            logging.debug("DISPATCH_cpu : Evaluation of enqueue_nd_range_kernel for %s on CPU", self.name)
             cdone.append(
                 self.enqueue_nd_range_kernel(cmd_qs['cpu'][cpu], cpu, 'cpu', size_percent, 0, deps=[cdone[-1]],
                                              did=dispatch_id, host_event=cpu_host_events))
-            logging.debug("DISPATCH_cpu : Evaluation of enqueue_read_buffers for %s on GPU", self.name)
+            logging.debug("DISPATCH_cpu : Evaluation of enqueue_read_buffers for %s on CPU", self.name)
             cdone.append(self.enqueue_read_buffers(cmd_qs['cpu'][cpu], cpu, 'cpu', size_percent, offset_percent,
                                                    deps=[cdone[-1]], callback=callback, did=dispatch_id,
                                                    host_event=cpu_host_events))
@@ -1175,7 +1172,7 @@ class Kernel(object):
 
             start_time = datetime.datetime.now()
             logging.debug("DISPATCH : %s ke.dispatch_end %s ", self.name, start_time)
-            logging.debug("DISPATCH : Evaluation of kernel arguments for %s on GPU", self.name)
+            logging.debug("DISPATCH : Evaluation of kernel arguments for %s ", self.name)
         logging.debug("DISPATCH : Number of events %d" % (len(gdone + cdone)))
         cmd_qs['gpu'][gpu].flush()
         cmd_qs['cpu'][cpu].flush()
@@ -1196,7 +1193,7 @@ class Kernel(object):
         :type ctxs: dict
         :param cmd_qs: Dictionary of list of Command Queues
         :type cmd_qs: dict
-        :param dep:
+        :param dep: PyOpenCL Event on which subsequent write operations will be dependent on stored in a list
         :param partition: Integer from 0 to 10 or None denoting partition class value.
         :type partition: Integer
         :param callback: A function that will run on the host side once the kernel completes execution on the device. Handle unexpected arguments.
@@ -1205,6 +1202,7 @@ class Kernel(object):
 
         """
         dispatch_start = datetime.datetime.now()
+        logging.debug("DISPATCH : Dispatch function call for %s starts at %s", self.name, dispatch_start)
         while test_and_set(0, 1):
             pass
         global nGPU
@@ -1262,16 +1260,16 @@ class Kernel(object):
             self.create_buffers(ctxs['gpu'], 'gpu', size_percent, offset_percent, exact=exact)
             gpu_host_events.create_buf_end = time.time()
             self.set_kernel_args('gpu')
-            logging.debug("DISPATCH_gpu : %s Calling enqueue_write_buffers for gpu", self.name)
+            logging.debug("DISPATCH_gpu : %s Calling enqueue_write_buffers for GPU", self.name)
             gdone.append(self.enqueue_write_buffers(cmd_qs['gpu'][gpu], gpu, 'gpu', size_percent, offset_percent,
                                                     deps=[deps['gpu']], exact=exact, did=dispatch_id,
                                                     host_event=gpu_host_events))
-            logging.debug("DISPATCH_gpu : %s Calling enqueue_nd_range_kernel for gpu", self.name)
+            logging.debug("DISPATCH_gpu : %s Calling enqueue_nd_range_kernel for GPU", self.name)
             gdone.append(
                 self.enqueue_nd_range_kernel(cmd_qs['gpu'][gpu], gpu, 'gpu', size_percent, 0, deps=[gdone[-1]],
                                              exact=exact,
                                              did=dispatch_id, host_event=gpu_host_events))
-            logging.debug("DISPATCH_gpu : %s Calling enqueue_read_buffers for gpu", self.name)
+            logging.debug("DISPATCH_gpu : %s Calling enqueue_read_buffers for GPU", self.name)
             gdone.append(
                 self.enqueue_read_buffers(cmd_qs['gpu'][gpu], gpu, 'gpu', size_percent, offset_percent,
                                           deps=[gdone[-1]], exact=exact,
@@ -1300,12 +1298,12 @@ class Kernel(object):
             cdone.append(self.enqueue_write_buffers(cmd_qs['cpu'][cpu], cpu, 'cpu', size_percent, offset_percent,
                                                     deps=[deps['cpu']], exact=exact, did=dispatch_id,
                                                     host_event=cpu_host_events))
-            logging.debug("DISPATCH_cpu : Evaluation of enqueue_nd_range_kernel for %s on GPU", self.name)
+            logging.debug("DISPATCH_cpu : Evaluation of enqueue_nd_range_kernel for %s on CPU", self.name)
             cdone.append(
                 self.enqueue_nd_range_kernel(cmd_qs['cpu'][cpu], cpu, 'cpu', size_percent, 0, deps=[cdone[-1]],
                                              exact=exact,
                                              did=dispatch_id, host_event=cpu_host_events))
-            logging.debug("DISPATCH_cpu : Evaluation of enqueue_read_buffers for %s on GPU", self.name)
+            logging.debug("DISPATCH_cpu : Evaluation of enqueue_read_buffers for %s on CPU", self.name)
             cdone.append(
                 self.enqueue_read_buffers(cmd_qs['cpu'][cpu], cpu, 'cpu', size_percent, offset_percent,
                                           deps=[cdone[-1]], exact=exact,
@@ -1576,6 +1574,7 @@ def plot_gantt_chart_graph(device_history, filename):
     :param filename: Name of file where the gantt chart is saved. The plot is saved in gantt_charts folder.
     :type filename: String
     """
+    import random
     import colorsys
     import matplotlib.pyplot as plt
     import matplotlib.patches as patches
@@ -1591,6 +1590,18 @@ def plot_gantt_chart_graph(device_history, filename):
         for rgb in HSV_tuples:
             rgb = map(lambda x: int(x * 255), colorsys.hsv_to_rgb(*rgb))
             hex_out.append("".join(map(lambda x: chr(x).encode('hex'), rgb)))
+        return hex_out
+
+    def get_N_random_HexColor(N=5):
+        HSV_tuples = [(x * 1.0 / N, 0.5, 0.5) for x in xrange(N)]
+        hex_out = []
+        'rgb(31, 119, 180)'
+        indexs = random.sample(range(0, 77), N)
+        for i in indexs:
+            r = int(ALL_COLORS[i][4:-1].split(",")[0])
+            g = int(ALL_COLORS[i][4:-1].split(",")[1])
+            b = int(ALL_COLORS[i][4:-1].split(",")[2])
+            hex_out.append('#%02x%02x%02x' % (r, g, b))
         return hex_out
 
     def list_from_file(file):
@@ -1634,7 +1645,9 @@ def plot_gantt_chart_graph(device_history, filename):
     device_info_list = normalise_timestamp(list_from_dev_history(device_history))
 
     colourMap = {}
-    colors = get_N_HexCol(len(device_info_list))
+    # colors = get_N_HexCol(len(device_info_list))
+    colors = get_N_random_HexColor(len(device_info_list))
+
     c = 0
     dev_time = {}
     for k in device_info_list:
@@ -1650,20 +1663,19 @@ def plot_gantt_chart_graph(device_history, filename):
         colourMap[k[2]] = colors[c]
         c = c + 1
 
-    legend_patches = []
-
-    for kn in colourMap:
-        patch_color = "#" + colourMap[kn]
-        legend_patches.append(patches.Patch(color=patch_color, label=str(k[2])))
+    # legend_patches = []
+    # for kn in colourMap:
+    #     patch_color = "#" + colourMap[kn]
+    #     legend_patches.append(patches.Patch(color=patch_color, label=str(k[2])))
 
     fig, ax = plt.subplots(figsize=(20, 10))
     device = 0
-    print dev_time
+    #print dev_time
     for dev in dev_time:
         for k in dev_time[dev]:
             kname = k[0]
-            patch_color = "#" + colourMap[kname]
-
+            # patch_color = "#" + colourMap[kname]
+            patch_color = colourMap[kname]
             start = k[1]
             finish = k[2]
             y = 5 + device * 5
@@ -1671,7 +1683,8 @@ def plot_gantt_chart_graph(device_history, filename):
             height = 5
             width = finish - start
             # print kname.split(",")[-1] + " : " + str(x) + "," + str(y) + "," + str(width) + "," + str(height)
-            ax.add_patch(patches.Rectangle((x, y), width, height, color=patch_color, label=kname.split(",")[-1]))
+            ax.add_patch(patches.Rectangle((x, y), width, height, facecolor=patch_color, edgecolor="#000000",
+                                           label=kname.split(",")[-1]))
         device = device + 1
     plt.legend(loc=1)
     ax.autoscale(True)

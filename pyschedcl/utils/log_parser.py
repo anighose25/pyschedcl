@@ -43,7 +43,6 @@ if __name__ == '__main__':
     p = args.partition_info
     c = args.callback
     he = args.host_event
-    ke = args.kernel_event
     dvt = args.device_type
     k = args.kernel_name
 
@@ -54,7 +53,7 @@ if __name__ == '__main__':
     print l_file
     log_data = open(l_file, "r")
 
-    if not d and not p and c == 'NONE' and not he and not ke and dvt == 'BOTH' and k == 'ALL':
+    if not d and not p and c == 'NONE' and not he and dvt == 'BOTH' and k == 'ALL':
         print log_data.read()
         print "Done"
     else:
@@ -62,15 +61,15 @@ if __name__ == '__main__':
         if k == 'ALL':
             k = ""
         if dvt == 'BOTH':
-            dvc = ""
+            dvc = "both"
         elif dvt == 'CPU':
-            dvc = "cpu"
-        elif dvt == 'GPU':
             dvc = "gpu"
+        elif dvt == 'GPU':
+            dvc = "cpu"
         log_data = open(l_file, "r")
         for line in log_data:
             if k in line:
-                if dvc in line:
+                if dvc not in line:
                     if d:
                         if "DISPATCH" in line:
                             print line
